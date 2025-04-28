@@ -12,6 +12,7 @@ const fetchClient = createFetchClient<paths>({
 const $api = createClient(fetchClient)
 
 function App() {
+  const { mutate, data, isPending } = $api.useMutation('get', '/')
   const [count, setCount] = useState(0)
 
   return (
@@ -25,6 +26,15 @@ function App() {
         </a>
       </div>
       <h1>FastAPI + ReactQuery = Typed</h1>
+      <div className="card">
+        <pre>
+          <code>{JSON.stringify(data, null, 2)}</code>
+        </pre>
+
+        <button type="button" onClick={() => mutate({})} disabled={isPending}>
+          {isPending ? 'Fetching...' : 'Fetch api data'}
+        </button>
+      </div>
       <div className="card">
         <button type="button" onClick={() => setCount((count) => count + 1)}>
           count is {count}
