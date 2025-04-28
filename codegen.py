@@ -24,3 +24,9 @@ def generate_schema(app: FastAPI):
             schema_path / "openapi.d.ts",
         ]
     )
+
+
+if __name__ == "__main__":
+    from main import app
+
+    generate_schema(app)
