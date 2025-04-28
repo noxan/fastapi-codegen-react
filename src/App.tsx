@@ -28,7 +28,13 @@ function App() {
       <h1>FastAPI + ReactQuery = Typed</h1>
       <div className="card">
         <pre className="code">
-          <code>{JSON.stringify(data, null, 2)}</code>
+          {data ? (
+            <code>{JSON.stringify(data, null, 2)}</code>
+          ) : isPending ? (
+            'Fetching...'
+          ) : (
+            'No data, click button to fetch...'
+          )}
         </pre>
 
         <button type="button" onClick={() => mutate({})} disabled={isPending}>
