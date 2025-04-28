@@ -29,7 +29,11 @@ function App() {
       <div className="card">
         <pre className="code">
           {data ? (
-            <code>{JSON.stringify(data, null, 2)}</code>
+            <code>
+              Message: {data.message}
+              <br />
+              Timestamp: {data.timestamp.toString()}
+            </code>
           ) : isPending ? (
             'Fetching...'
           ) : (
