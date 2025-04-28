@@ -40,3 +40,12 @@
 .read-the-docs {
   color: #888;
 }
+
+.code {
+  white-space: pre-wrap;
+  text-align: left;
+  min-height: 100px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+}

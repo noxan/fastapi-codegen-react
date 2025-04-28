@@ -27,7 +27,7 @@ function App() {
       </div>
       <h1>FastAPI + ReactQuery = Typed</h1>
       <div className="card">
-        <pre>
+        <pre className="code">
           <code>{JSON.stringify(data, null, 2)}</code>
         </pre>
 
