@@ -3,7 +3,6 @@ import subprocess
 from pathlib import Path
 
 from fastapi import FastAPI
-from fastapi.concurrency import asynccontextmanager
 
 
 def generate_schema(app: FastAPI):
@@ -25,9 +24,3 @@ def generate_schema(app: FastAPI):
             schema_path / "openapi.d.ts",
         ]
     )
-
-
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    generate_schema(app)
-    yield
